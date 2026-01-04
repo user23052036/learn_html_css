@@ -43,5 +43,23 @@ const url = `https://www.1%20line%20code.com`;
 console.log(url.replace('%20',''));
 console.log(url.includes('code')); // asking questions gives boolean answers
 
+// The split() method of String values takes a pattern and divides this string into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.
+
+const str = "the bird was singing a song in the morning";
+const splitarr = str.split(" ");
+
+console.log(splitarr);
+
+const strCopy = str.split();
+console.log(strCopy);
+
+
+const emptyString = "";
+
+// string is empty and separator is non-empty
+console.log(emptyString.split("a")); // [""]
+
+// string and separator are both empty strings
+console.log(emptyString.split(emptyString)); // []
 
 
