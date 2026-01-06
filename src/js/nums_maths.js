@@ -40,6 +40,11 @@ Math.sqrt(49);         // 7
 Math.cbrt(27);         // 3
 Math.random();         // 0 <= value < 1
 
+const min = 100;
+const max = 200;
+
+console.log(Math.floor(Math.random()*(max-min+1)) + min); 
+
 // random integer between 1 and 10
 Math.floor(Math.random() * 10) + 1;
 Math.trunc(4.9);       // 4   (removes decimal)
