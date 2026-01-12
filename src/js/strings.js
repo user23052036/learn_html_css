@@ -1,4 +1,4 @@
-const { log } = require("console");
+"use strict";
 
 const name = "Souvik";
 const year = 2026;

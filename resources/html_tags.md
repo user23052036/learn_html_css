@@ -139,17 +139,160 @@ Example:
 
 ---
 
-## 6. Grouping / container tags (block vs inline)
+## 6. The ONE rule to remember
 
-### Block-level (take full width)
+> **Block elements stack vertically.
+> Inline elements flow horizontally.**
+> Use <section> for Summary, Experience, Education, etc.
+> Use <article> for each individual experience/project.
+> Use <div> only when there’s no semantic meaning.
 
-* `<div>` — generic block container
-* Semantic block tags: `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`, `<main>`, `<aside>`, `<figure>`, `<figcaption>`, `<form>`, `<table>`, `<fieldset>` etc.
+That’s it. Everything else is detail.
 
-### Inline (take width as needed)
+---
 
-* `<span>` — generic inline container
-* Text-level inline tags: `<a>`, `<abbr>`, `<b>`, `<code>`, `<em>`, `<img>`, `<input>`, `<label>`, `<time>`, `<q>`, `<samp>`, `<kbd>`, `<var>`, `<output>`, etc.
+### Block-level elements (big containers)
+
+**How they behave**
+
+* Start on a **new line**
+* Take **full width** of the parent
+* Can contain **other blocks + inline elements**
+* Used for **page structure**
+
+Think of them as **boxes stacked top-to-bottom**.
+
+### Example
+
+```html
+<div>Header</div>
+<div>Content</div>
+<div>Footer</div>
+```
+
+Visual result:
+
+```
+[ Header  ]  ← full width
+[ Content ]
+[ Footer  ]
+```
+
+### Why semantic block tags exist
+
+Tags like `<section>`, `<article>`, `<main>`, `<nav>` are still **block elements**, but with **meaning**.
+
+| Tag                     | Meaning             |
+| ----------------------- | ------------------- |
+| `<section>`             | Thematic group      |
+| `<article>`             | Independent content |
+| `<nav>`                 | Navigation links    |
+| `<main>`                | Main page content   |
+| `<header>` / `<footer>` | Intro / end         |
+| `<aside>`               | Side content        |
+
+Browsers, screen readers, and SEO **understand your page better** when you use these.
+
+---
+
+### Inline elements (small pieces inside text)
+
+![Image](https://media.geeksforgeeks.org/wp-content/uploads/20250510120821149469/inline.webp)
+
+**How they behave**
+
+* Do **NOT** start on a new line
+* Take **only required width**
+* Live **inside text**
+* Cannot contain block elements
+
+Think of them as **words inside a sentence**.
+
+### Example
+
+```html
+<p>
+  Hello <span>World</span>, visit <a href="#">Google</a>
+</p>
+```
+
+Visual result:
+
+```
+Hello World, visit Google
+```
+
+No line breaks. Everything flows naturally.
+
+---
+
+### `<div>` vs `<span>` (this clears 80% confusion)
+
+| Tag      | Type   | Use                        |
+| -------- | ------ | -------------------------- |
+| `<div>`  | Block  | Layout / grouping sections |
+| `<span>` | Inline | Styling small text parts   |
+
+### Example
+
+```html
+<div>
+  Price: <span>$499</span>
+</div>
+```
+
+Result:
+
+```
+[ Price: $499 ]
+```
+
+* `<div>` creates a block
+* `<span>` just wraps text inside it
+
+---
+
+### Real-world analogy (important)
+
+### Block = paragraphs
+
+Like writing:
+
+```
+This is paragraph one.
+
+This is paragraph two.
+```
+
+### Inline = words
+
+Like **bold**, *italic*, or links inside a sentence.
+
+---
+
+### Why this matters in CSS later
+
+You’ll often see:
+
+```css
+display: block;
+display: inline;
+display: inline-block;
+```
+
+Meaning:
+
+* Change how an element **behaves visually**
+* Not what the tag *is*, but how it *acts*
+
+---
+
+### Mental shortcut (use this in exams & interviews)
+
+* **Page structure?** → block (`div`, `section`, `article`)
+* **Inside text?** → inline (`span`, `a` anchor tag, `em`)
+* **Need meaning + structure?** → semantic block tags
+* **Just styling?** → `div` / `span`
 
 ---
 
@@ -398,13 +541,5 @@ Below is a consolidated list of tags shown in the PDF. Short description next to
 * Avoid inline styles; use CSS files.
 * Keep HTML valid and well-indented for readability.
 * Use `rel="noopener"` with `target="_blank"` for security.
-
----
-
-## How to use this `.md`
-
-* Save as `notes.md`. It can be used directly in a GitHub repo README or rendered on a static site generator.
-* Code blocks contain ready-to-use HTML snippets if you want to paste them into an `.html` file.
-* The PDF diagrams and slide examples are a useful visual companion — see source.
 
 ---

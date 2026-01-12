@@ -12,7 +12,7 @@ var password = "756ty4@.1";
 let pinCode;
 
 // rollNumber = 2; not allowed
-console.table([rollNumber,emailId,password,pinCode]);
+console.table([rollNumber,emailId,password,pinCode]); 
 // we dont use var bacause of the problem in their scope.. it is depreciated
 
 // primitive type:

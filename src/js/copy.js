@@ -39,7 +39,8 @@ console.log("--- PART 3: SHALLOW COPY ---");
 const original = {
   name: "Souvik",
   age: 28,
-  account: {
+  account: 
+  {
     balance: 100,
     currency: "INR"
   }
@@ -82,7 +83,8 @@ console.log("--- PART 4: More Shallow Copy Examples ---");
 const student = {
   name: "John",
   scores: [85, 90, 78], // Array is also an object!
-  address: {
+  address: 
+  {
     city: "Mumbai",
     pincode: 400001
   }
